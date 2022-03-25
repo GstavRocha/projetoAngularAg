@@ -15,7 +15,9 @@ export class EntradaComponent implements OnInit {
 
   ngOnInit(){
   }
-  novoContato(nome:string, email: string, aniversario:string, telefone: string ){
-    this.agenda.novoContato(nome,email,aniversario,telefone);
+  adicionarContato(nome:string, email:string, telefone: string, aniversaio:string ){
+    const contato = new Contatos(nome,email,telefone,aniversaio);
+    this.agenda.adicionarContato(contato);
   }
+
 }

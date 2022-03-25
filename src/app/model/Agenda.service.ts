@@ -8,11 +8,12 @@ export class AgendaService {
 constructor() {
   this.listaContatos =[];
  }
+ adicionarContato(contato: Contatos){
+   this.listaContatos.push(contato);
+ }
+ obterContato(){
+  return this.listaContatos;
+ }
 
-  novoContato(nome: string, email:string, aniversario: string, telefone:string){
-    let novo = new Contatos(nome,telefone,email,aniversario);
-    this.listaContatos.push(novo);
-    console.log(this.novoContato);
-  }
 
 }

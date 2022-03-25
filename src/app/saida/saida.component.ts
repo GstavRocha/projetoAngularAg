@@ -1,3 +1,5 @@
+import { Contatos } from './../model/Contatos';
+import { AgendaService } from './../model/Agenda.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SaidaComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private agenda: AgendaService) { }
+    contatos: Contatos[]
+  ngOnInit(): void{
+    this.contatos =this.agenda.obterContato();
   }
 
 }

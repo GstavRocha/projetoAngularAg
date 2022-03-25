@@ -3,8 +3,10 @@
   <th> TELEFONE: </th>
   <th>EMAIL: </th>
   <th>ANIVERSÁRIO</th>
-  <tr>
-    <td></td>
+  <tr *ngFor="let valor of contatos">
+    <td>{{valor.getNome()}}</td>
+    <td>{{valor.getTelefone()}}</td>
+    <td>{{valor.getEmail()}}</td>
+    <td>{{valor.getAniversario()}}</td>
   </tr>
 </table>
-<!-- parei aqui falta colocar pegar() na saida-->
