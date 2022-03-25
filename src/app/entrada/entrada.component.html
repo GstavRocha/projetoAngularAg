@@ -1,0 +1,15 @@
+
+<form>
+  <label for="nome">NOME: </label>
+  <input type="string" name="nome" #nomH />
+  <label for="nome">TELEFONE: </label>
+  <input type="string" name="nome" #telH />
+  <br>
+  <label for="nome">EMAIL: </label>
+  <input type="string" name="nome" #emaH />
+  <label for="nome">ANIVERSÁRIO: </label>
+  <input type="string" name="nome" #anivH />
+  <br>
+  <br>
+  <input type="button" value="Adicionar" (click)="novoContato(nomH.value,emaH.value,anivH.value,telH.value)">
+</form>
