@@ -18,5 +18,7 @@
   <br>
   <br>
   <input type="button" value="Adicionar" (click)="adicionarContato(nome.value,telefone.value,email.value,aniversario.value)" [disabled]="formContato.invalid">
+  <div class="alert alert-danger" *ngIf="nome.invalid && (nome.touched || nome.dirty)"> Campo Nome inválido</div>
+  <div class="alert alert-danger" *ngIf="telefone.invalid && (telefone.touched || telefone.dirty)"> Campo inválido, exemplo VÁLIDO 8888-8888</div>
 </form>
 </div>
