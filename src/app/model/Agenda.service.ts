@@ -1,15 +1,21 @@
 
 import { Injectable } from '@angular/core';
-import { empty } from 'rxjs';
 import { Contatos } from './Contatos';
 
 @Injectable()
 export class AgendaService {
-  listaContatos: Contatos[];
+ public listaContatos: Contatos[];
 constructor() {
   this.listaContatos =[];
  }
- verifica(contato: Contatos): boolean{
+ public verificaExistinte(contato: Contatos){
+   if(this.listaContatos.find(element => element.nome == contato.nome)){
+     return true;
+   }
+   return false;
+
+ }
+ public verificaVazio(contato: Contatos): boolean{
    let observador = Object.values(contato);
    for(let i = 0; i< observador.length; i++){
      if(observador[i]== ''){
@@ -18,16 +24,24 @@ constructor() {
      return false;
    }
  }
- adicionarContato(contato: Contatos):boolean{
-   if(!this.verifica(contato)){
+ public adicionarContato(contato: Contatos):boolean{
+   if(!this.verificaVazio(contato) && !this.verificaExistinte(contato)){
     this.listaContatos.push(contato);
+    //this.listaContatos.reset();
     return true;
    }
    return false;
  }
- obterContato(){
+ public obterContato(){
   return this.listaContatos;
  }
+ public remove(index: number):boolean{
+   if(index != null){
+     this.listaContatos.splice(index, 1);
+     return true;
+   }
+   return false;
 
+ }
 
 }

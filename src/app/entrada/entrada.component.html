@@ -1,15 +1,22 @@
-
-<form>
-  <label for="nome">NOME: </label>
-  <input type="string" name="nome" #nomH />
-  <label for="nome">TELEFONE: </label>
-  <input type="string" name="nome" #telH />
+<div>
+<form [formGroup]="formContato">
+  <label for="nome" class="col-form-label-sm"> NOME: </label>
   <br>
-  <label for="nome">EMAIL: </label>
-  <input type="string" name="nome" #emaH />
-  <label for="nome">ANIVERSÁRIO: </label>
-  <input type="string" name="nome" #anivH />
+  <input type="string" class="col-form-control w-100" name="nome" formControlName="nome"/>
+  <br>
+  <label for="email" class="col-form-label-sm">EMAIL: </label>
+  <br>
+  <input type="string" name="email" formControlName="email" />
+  <br>
+  <label for="nome" class="col-form-label-sm">TELEFONE: </label>
+  <br>
+  <input type="tel" name="telefone"  formControlName="telefone" />
+  <br>
+  <label for="data" class="col-form-label-sm">ANIVERSÁRIO: </label>
+  <br>
+  <input type="date" name="date"formControlName="aniversario"/>
   <br>
   <br>
-  <input type="button" value="Adicionar" (click)=" adicionarContato(nomH.value, emaH.value, telH.value, anivH.value)">
+  <input type="button" value="Adicionar" (click)="adicionarContato(nome.value,telefone.value,email.value,aniversario.value)" [disabled]="formContato.invalid">
 </form>
+</div>

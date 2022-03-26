@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { EntradaComponent } from './entrada/entrada.component';
 import { SaidaComponent } from './saida/saida.component';
 import { AgendaService } from './model/Agenda.service';
+
 
 
 @NgModule({
@@ -14,8 +16,7 @@ import { AgendaService } from './model/Agenda.service';
     SaidaComponent
    ],
   imports: [
-    BrowserModule
-  ],
+    BrowserModule,FormsModule, ReactiveFormsModule],
   providers: [ AgendaService ],
   bootstrap: [AppComponent]
 })

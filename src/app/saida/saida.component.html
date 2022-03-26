@@ -1,12 +1,18 @@
-<table>
-  <th>NOME: </th>
-  <th> TELEFONE: </th>
-  <th>EMAIL: </th>
+<div class="bg-black text-center text-white">
+  <h6 class="">Lista de Contatos</h6>
+</div>
+<table class="table">
+  <thead class="thead-dark">
+  <th scope="col">NOME: </th>
+  <th scope="col"> TELEFONE: </th>
+  <th scope="col">EMAIL: </th>
   <th>ANIVERSÁRIO</th>
-  <tr *ngFor="let valor of contatos">
-    <td>{{valor.getNome()}}</td>
-    <td>{{valor.getTelefone()}}</td>
-    <td>{{valor.getEmail()}}</td>
-    <td>{{valor.getAniversario()}}</td>
+  </thead>
+  <tr *ngFor="let valor of contatos; index as i">
+    <td>{{valor.nome}}</td>
+    <td>{{valor.telefone}}</td>
+    <td>{{valor.email}}</td>
+    <td>{{valor.aniversario}}</td>
+    <td><input type="button" value="Excluir" class="btn btn-outline bg-black text-white" (click)="remover(i)"></td>
   </tr>
 </table>
